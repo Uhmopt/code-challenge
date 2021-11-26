@@ -16,7 +16,7 @@ export default function LottieIcon({
     },
   };
   return (
-    <div>
+    <div className="pointer-events-none">
       <Lottie options={defaultOptions} height={width} width={width} />
     </div>
   );

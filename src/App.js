@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@mui/material";
 import { useSelector } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
+import CommonWidgets from "routes/pages/common";
 import { darkTheme, lightTheme } from "theme";
 import routes from "./routes";
 import PrivateRoute from "./routes/Private";
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <ThemeProvider theme={appData?.isDark ? darkTheme : lightTheme}>
+      <CommonWidgets />
       <Router basename={base}>
         {routes.map((route) => {
           if (route.auth) {
