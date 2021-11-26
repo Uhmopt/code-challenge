@@ -10,10 +10,10 @@ import PublicRoute from "./routes/Public";
 const base = process.env.PUBLIC_URL || "/";
 
 function App() {
-  const appData = useSelector((state) => state?.app ?? {});
+  const confData = useSelector((state) => state?.conf ?? {});
 
   return (
-    <ThemeProvider theme={appData?.isDark ? darkTheme : lightTheme}>
+    <ThemeProvider theme={confData?.isDark ? darkTheme : lightTheme}>
       <CommonWidgets />
       <Router basename={base}>
         {routes.map((route) => {

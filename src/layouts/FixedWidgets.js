@@ -9,7 +9,7 @@ export default function FixedWidgets() {
     <div className="relative">
       <div
         className={`fixed bottom-0 right-10 ${
-          theme?.palette?.mode === "dark" ? "" : "opacity-10"
+          theme?.palette?.mode === "dark" ? "opacity-30" : "opacity-10"
         }`}
       >
         <AnimRollFilm />
