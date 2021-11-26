@@ -1,9 +1,11 @@
 // variable
-@import './settings.scss';
+@import "./settings.scss";
 
 // global base
-@import './components/base.scss';
+@import "./components/base.scss";
+
+// glow
+@import "./components/glowing.scss";
 
 // scroll thumb
-@import './components/scroll.scss';
-
+@import "./components/scroll.scss";

@@ -9,7 +9,7 @@ export default function Layout({ children = <></>, fullWidth = false }) {
   return (
     <HtmlContainer>
       <Header />
-      <div>
+      <div className="mt-14">
         {Boolean(fullWidth) ? (
           <Body>{children}</Body>
         ) : (

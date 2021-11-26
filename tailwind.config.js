@@ -1,5 +1,6 @@
 // tailwind.config.js
 module.exports = {
+  important: true,
   purge: ["./src/**/*.{js,ts,jsx,tsx}", ".src/components/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class", // or 'media' or 'class'
   theme: {
@@ -38,10 +39,10 @@ module.exports = {
       colors: {
         primary: "#0A86F0",
       },
-    },
-    cursor: {
-      crosshair: "crosshair",
-      "zoom-in": "zoom-in",
+      cursor: {
+        crosshair: "crosshair",
+        "zoom-in": "zoom-in",
+      },
     },
   },
   variants: {
