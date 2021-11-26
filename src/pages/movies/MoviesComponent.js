@@ -19,11 +19,15 @@ export default function MoviesComponent() {
     });
   };
 
-  const formattedData = formatArray(data).filter((item) =>
-    filter?.search
-      ? JSON.stringify(Object.values(item)).includes(filter?.search)
-      : true
-  );
+  const formattedData = formatArray(data)
+    .filter((item) =>
+      filter?.search
+        ? Object.values(item).join(" ").includes(String(filter?.search).trim())
+        : true
+    )
+    .sort((a, b) =>
+      (filter?.desc ? a?.title > b?.title : a?.title < b?.title) ? -1 : 1
+    );
 
   useEffect(() => {
     openLoading(true);

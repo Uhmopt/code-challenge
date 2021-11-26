@@ -37,8 +37,6 @@ export default function MoviesFilter({ data = {}, onChange = () => {} }) {
             size="small"
           />
         </Grid>
-        <Grid item></Grid>
-        <Grid item></Grid>
       </Grid>
     </div>
   );

@@ -6,7 +6,10 @@ export const defaultMovie = {
   description:
     "this is a Very Funny film this is a Very Funny film this is a Very Funny film this is a Very Funny film this is a Very Funny film this is a Very Funny film this is a Very Funny film this is a Very Funny film this is a Very Funny film this is a Very Funny film this is a Very Funny film this is a Very Funny film ",
 };
-export const defaultMovies = Array.from({ length: 100 }, () => defaultMovie);
+export const defaultMovies = Array.from({ length: 100 }, (v, i) => ({
+  ...defaultMovie,
+  title: `${i}: ${defaultMovie?.title}`,
+}));
 
 export const getMovies = ({ onFinish = () => {} }) => {
   setTimeout(() => {
