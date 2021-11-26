@@ -10,7 +10,7 @@ export default function MainHeader() {
         container
         justifyContent="space-between"
         alignItems="center"
-        className="p-2"
+        className="py-2 px-4"
       >
         <Grid item>
           <Stack justifyContent="space-between" alignItems="center" spacing={2}>

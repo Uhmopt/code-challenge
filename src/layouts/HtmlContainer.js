@@ -1,11 +1,5 @@
 import React from "react";
 
-export default function HtmlContainer({ children = "", background = "left" }) {
-  return (
-    <div
-      className={`min-h-screen`}
-    >
-      {children}
-    </div>
-  );
+export default function HtmlContainer({ children = "" }) {
+  return <div className={`min-h-screen`}>{children}</div>;
 }

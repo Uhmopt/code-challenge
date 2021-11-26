@@ -9,13 +9,15 @@ export default function Layout({ children = <></>, fullWidth = false }) {
   return (
     <HtmlContainer>
       <Header />
-      {Boolean(fullWidth) ? (
-        <Body>{children}</Body>
-      ) : (
-        <Container>
+      <div>
+        {Boolean(fullWidth) ? (
           <Body>{children}</Body>
-        </Container>
-      )}
+        ) : (
+          <Container>
+            <Body>{children}</Body>
+          </Container>
+        )}
+      </div>
       <Footer />
     </HtmlContainer>
   );
