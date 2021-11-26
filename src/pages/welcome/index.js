@@ -10,7 +10,7 @@ export default function Welcome() {
     <Layout fullWidth>
       <BannerHeader
         image={image}
-        title="Code challenge cinema"
+        title="Code challenge cinema 📽"
         subtitle="New cinema comes!"
       />
       <Container>
