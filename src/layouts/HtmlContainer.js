@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function HtmlContainer({ children = "" }) {
-  return <div className={`min-h-screen`}>{children}</div>;
+  return <div className={`relative min-h-screen transition-all`}>{children}</div>;
 }

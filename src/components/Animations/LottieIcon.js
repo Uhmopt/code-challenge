@@ -1,4 +1,4 @@
-import successData from "assets/animation/lottie/success.json";
+import successData from "assets/lottie/video-loading.json";
 import React from "react";
 import Lottie from "react-lottie";
 
