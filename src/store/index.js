@@ -6,7 +6,10 @@ const store = createStore(combineReducers(reducers));
 
 store.subscribe(() => {
   const storeData = store.getState();
-  window.sessionStorage.setItem(APP_NAME, JSON.stringify(storeData));
+  window.sessionStorage.setItem(
+    APP_NAME,
+    JSON.stringify({ conf: storeData?.conf ?? {}, auth: storeData?.auth ?? {} })
+  );
 });
 
 // const token = localStorage.getItem("access_token");

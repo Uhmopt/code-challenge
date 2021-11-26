@@ -1,14 +1,7 @@
-import { APP_NAME } from "lib/global";
-import { jsonParse } from "lib/json";
 import { formatStore, updateStore } from "./tools";
-const initialState = { isDark: false, isLoading: false };
+const initialState = { isLoading: false };
 
-const restoreState = {
-  ...initialState,
-  ...(jsonParse(localStorage.getItem(APP_NAME))?.app ?? {}),
-};
-
-const app = (state = restoreState, { type, payload = null }) => {
+const app = (state = initialState, { type, payload = null }) => {
   switch (type) {
     case "SET_APP":
       return formatStore(updateStore(state, payload));
