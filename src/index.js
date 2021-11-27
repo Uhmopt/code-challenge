@@ -1,3 +1,5 @@
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { SERVER_URI } from "lib/global";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
@@ -7,9 +9,16 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";
 
+const apolloClient = new ApolloClient({
+  uri: SERVER_URI,
+  cache: new InMemoryCache(),
+});
+
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ApolloProvider client={apolloClient}>
+      <App />
+    </ApolloProvider>
   </Provider>,
   document.getElementById("root")
 );

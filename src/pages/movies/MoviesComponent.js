@@ -1,25 +1,17 @@
+import { useQuery } from "@apollo/client";
 import { formatArray } from "lib/arrayObject";
-import { getMovies } from "models/movieModel";
+import { QUERY_MOVIES } from "models/movieModel";
 import React, { useEffect, useState } from "react";
 import { openLoading } from "store/reducers/tools";
 import MoviesFilter from "./forms/MoviesFilter";
 import MoviesGridContainer from "./forms/MoviesGridContainer";
+import { Alert } from "@mui/material";
 
 export default function MoviesComponent() {
+  const { loading, error, data } = useQuery(QUERY_MOVIES);
   const [filter, setFilter] = useState({});
-  const [data, setData] = useState([]);
 
-  const loadData = (onFinish = () => {}) => {
-    getMovies({
-      onFinish: (resMovies) => {
-        setData(formatArray(resMovies));
-
-        onFinish(resMovies);
-      },
-    });
-  };
-
-  const formattedData = formatArray(data)
+  const formattedData = formatArray(data?.movies)
     .filter((item) =>
       filter?.search
         ? Object.values(item).join(" ").includes(String(filter?.search).trim())
@@ -30,16 +22,18 @@ export default function MoviesComponent() {
     );
 
   useEffect(() => {
-    openLoading(true);
-    loadData(() => {
-      openLoading(false);
-    });
-  }, []);
+    openLoading(loading);
+  }, [loading]);
 
   return (
     <div className="mt-8">
-      <MoviesFilter data={filter ?? {}} onChange={setFilter} />
-      <MoviesGridContainer data={formattedData ?? []} />
+      <MoviesFilter className="my-2" data={filter ?? {}} onChange={setFilter} />
+      {error && (
+        <Alert className="my-2" severity="warning" elevation={12}>
+          {error?.message ?? ""}
+        </Alert>
+      )}
+      <MoviesGridContainer className="my-2" data={formattedData ?? []} />
     </div>
   );
 }

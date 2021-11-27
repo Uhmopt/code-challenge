@@ -2,7 +2,11 @@ import { Sort } from "@mui/icons-material";
 import { Grid, IconButton, TextField } from "@mui/material";
 import React from "react";
 
-export default function MoviesFilter({ data = {}, onChange = () => {} }) {
+export default function MoviesFilter({
+  data = {},
+  onChange = () => {},
+  className = "",
+}) {
   const handleChangeByName = (name = "", value = "") => {
     onChange((s = {}) => ({ ...(s ?? {}), [name]: value }));
   };
@@ -17,7 +21,7 @@ export default function MoviesFilter({ data = {}, onChange = () => {} }) {
   };
 
   return (
-    <div>
+    <div className={className ?? ""}>
       <Grid container spacing={2} justifyContent="flex-end" alignItems="center">
         <Grid item>
           <IconButton

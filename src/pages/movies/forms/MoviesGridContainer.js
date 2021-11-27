@@ -4,7 +4,10 @@ import { COUNT_PER_PAGE } from "lib/global";
 import React, { useEffect, useState } from "react";
 import MoviesGrid from "./MoviesGrid";
 
-export default function MoviesGridContainer({ data: allData = [] }) {
+export default function MoviesGridContainer({
+  data: allData = [],
+  className = "",
+}) {
   const [page, setPage] = useState({ index: 1, pages: 0 });
 
   const formattedData = formatArray(allData).slice(
@@ -24,15 +27,17 @@ export default function MoviesGridContainer({ data: allData = [] }) {
   }, [allData]);
 
   return (
-    <div className="my-4">
+    <div className={`${className}`}>
       <MoviesGrid data={formattedData} />
-      <div className="flex justify-center py-2">
-        <Pagination
-          count={page?.pages}
-          page={page?.index}
-          onChange={handleChangePage}
-        />
-      </div>
+      {page?.pages > 1 && (
+        <div className="flex justify-center py-2">
+          <Pagination
+            count={page?.pages}
+            page={page?.index}
+            onChange={handleChangePage}
+          />
+        </div>
+      )}
     </div>
   );
 }
