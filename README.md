@@ -1,8 +1,16 @@
-# Getting Started with Create React App
+# Simple Code challenge from Ivan
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+And uses [Material UI](https://mui.com), [TailwindCSS](https://tailwindcss.com), and [Apollo GraphQL](https://www.apollographql.com)
+
 ## Available Scripts
+
+Before run this project you should run its backend server
+
+Go to [Code Challenge backend](https://github.com/Uhmopt/code-challenge-backend) and run the backend
+
+After
 
 In the project directory, you can run:
 
