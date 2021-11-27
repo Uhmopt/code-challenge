@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_MOVIES = gql`
+export const QUERY_GET_MOVIES = gql`
   query GetExchangeRates {
     movies {
       image
