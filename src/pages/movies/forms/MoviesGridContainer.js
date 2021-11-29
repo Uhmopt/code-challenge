@@ -22,6 +22,7 @@ export default function MoviesGridContainer({
   useEffect(() => {
     setPage((s = {}) => ({
       ...(s ?? {}),
+      index: 1,
       pages: Math.ceil(formatArray(allData).length / COUNT_PER_PAGE),
     }));
   }, [allData]);
